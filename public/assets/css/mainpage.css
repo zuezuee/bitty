@@ -6,7 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px; /* Untuk header fixed */
+    padding-top: 60px;
+    /* Untuk header fixed */
 }
 
 /* ===================================== */
@@ -23,21 +24,25 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 60px 0 40px; /* Kurangi padding atas agar lebih ke atas */
+    padding: 60px 0 40px;
+    /* Kurangi padding atas agar lebih ke atas */
 }
 
 .section1-top-content {
     flex: 1;
     display: flex;
-    align-items: flex-start; /* Ubah dari center ke flex-start */
+    align-items: flex-start;
+    /* Ubah dari center ke flex-start */
     justify-content: center;
     width: 100%;
-    padding-top: 40px; /* Tambahkan padding atas */
+    padding-top: 40px;
+    /* Tambahkan padding atas */
 }
 
 .section1-container {
     display: flex;
-    align-items: flex-start; /* Ubah dari center ke flex-start */
+    align-items: flex-start;
+    /* Ubah dari center ke flex-start */
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
@@ -50,9 +55,11 @@
 /* ===================================== */
 .section1-left {
     flex: 1;
-    text-align: left; /* Pastikan rata kiri */
+    text-align: left;
+    /* Pastikan rata kiri */
     padding-right: 60px;
-    margin-top: 40px; /* Reset margin top */
+    margin-top: 40px;
+    /* Reset margin top */
 }
 
 .section1-title {
@@ -74,7 +81,7 @@
 /* SECTION 1 RIGHT - GAMBAR */
 /* ===================================== */
 .section1-right {
-   flex: 1;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +104,8 @@
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-top: -100px !important; /* ⬅️ TAMBAH !important */
+    margin-top: -100px !important;
+    /* ⬅️ TAMBAH !important */
     position: relative;
     z-index: 3;
 }
@@ -120,7 +128,7 @@
     padding: 20px 15px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
@@ -148,50 +156,56 @@
 /* ===================================== */
 @media (max-width: 768px) {
     #section1 {
-        padding: 40px 0 30px; /* Kurangi padding di mobile */
+        padding: 40px 0 30px;
+        /* Kurangi padding di mobile */
     }
-    
+
     .section1-top-content {
         padding-top: 20px;
     }
-    
+
     .section1-container {
         flex-direction: column;
         padding: 0 20px;
-        text-align: left; /* Tetap kiri di mobile */
+        text-align: left;
+        /* Tetap kiri di mobile */
     }
-    
+
     .section1-left {
         padding-right: 0;
         margin-bottom: 30px;
-        text-align: left; /* Tetap kiri di mobile */
+        text-align: left;
+        /* Tetap kiri di mobile */
     }
-    
+
     .section1-title {
         font-size: 2.5rem;
-        text-align: left; /* Tetap kiri di mobile */
+        text-align: left;
+        /* Tetap kiri di mobile */
     }
-    
+
     .section1-subtitle {
         font-size: 1.2rem;
-        text-align: left; /* Tetap kiri di mobile */
+        text-align: left;
+        /* Tetap kiri di mobile */
     }
-    
+
     .section1-right {
-        justify-content: center; /* Di mobile gambar ke tengah */
+        justify-content: center;
+        /* Di mobile gambar ke tengah */
     }
-    
+
     .section1-image {
         max-width: 100%;
         max-height: 300px;
     }
-    
+
     .feature-container {
         flex-wrap: wrap;
         gap: 15px;
         padding: 25px 30px;
     }
-    
+
     .feature-card {
         width: 140px;
         padding: 18px 12px;
@@ -202,25 +216,25 @@
     .section1-title {
         font-size: 2rem;
     }
-    
+
     .section1-subtitle {
         font-size: 1rem;
     }
-    
+
     .feature-container {
         gap: 12px;
         padding: 20px 25px;
     }
-    
+
     .feature-card {
         width: 120px;
         padding: 15px 10px;
     }
-    
+
     .feature-card img {
         height: 80px;
     }
-    
+
     .feature-card p {
         font-size: 13px;
     }
@@ -230,7 +244,8 @@
 #section1 .section-content {
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.8); /* Overlay transparan */
+    background: rgba(255, 255, 255, 0.8);
+    /* Overlay transparan */
     padding: 40px;
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -244,36 +259,38 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 60px 0 40px; /* Kurangi padding atas agar lebih ke atas */
+    padding: 60px 0 40px;
+    /* Kurangi padding atas agar lebih ke atas */
 }
 
 
-    /* --------------------------------------------------
+/* --------------------------------------------------
        PHRASE BOX
     -------------------------------------------------- */
-    .phrase-box {
-        position: absolute;
-        top: 288px;
-        left: 170px;
-        width: 288px;
-        height: 376px;
-        padding: 25px;
-        border-radius: 12px;
-        font-size: 36px;
-        line-height: normal;
-        font-weight: 500;
-        text-align: center;
-        color: #FF267C;
-        z-index: 3;
-    }
+.phrase-box {
+    position: absolute;
+    top: 288px;
+    left: 170px;
+    width: 288px;
+    height: 376px;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 36px;
+    line-height: normal;
+    font-weight: 500;
+    text-align: center;
+    color: #FF267C;
+    z-index: 3;
+}
 
-    /* --------------------------------------------------
+/* --------------------------------------------------
        RIGHT BUTTON AREA
     -------------------------------------------------- */
 /* RIGHT BUTTON AREA */
 .right-box {
     position: absolute;
-    top: 42%;              /* ← NAIKIN dari 50% ke 42% */
+    top: 42%;
+    /* ← NAIKIN dari 50% ke 42% */
     right: 9%;
     width: 28%;
     text-align: center;
@@ -288,7 +305,8 @@
     font-size: 52px;
     color: #FDF3F4;
     font-weight: 700;
-    margin-bottom: 18px;   /* ← jarak lebih besar */
+    margin-bottom: 18px;
+    /* ← jarak lebih besar */
 }
 
 /* DESCRIPTION */
@@ -297,17 +315,22 @@
     font-size: 22px;
     font-weight: 400;
     color: #FDF3F4;
-    margin-bottom: 35px;   /* ← jarak jauh lebih besar ke button */
+    margin-bottom: 35px;
+    /* ← jarak jauh lebih besar ke button */
 }
 
 
 #sparkBtn {
     display: flex;
     justify-content: center;
-    align-items: center;  /* ← bikin text tepat di tengah */
-    width: 100%;          /* ← otomatis mengikuti lebar right-box */
-    max-width: 260px;     /* ← biar gak kepanjangan */
-    margin: 0 auto;       /* ← center di dalam right-box */
+    align-items: center;
+    /* ← bikin text tepat di tengah */
+    width: 100%;
+    /* ← otomatis mengikuti lebar right-box */
+    max-width: 260px;
+    /* ← biar gak kepanjangan */
+    margin: 0 auto;
+    /* ← center di dalam right-box */
     padding: 12px 0;
     border: none;
     border-radius: 20px;
@@ -321,13 +344,14 @@
 }
 
 
-    #sparkBtn:hover {
-        transform: translateY(-2px);
-        box-shadow: inset 0 0 25px rgba(255, 90, 120, 0.7);
-    }
+#sparkBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 25px rgba(255, 90, 120, 0.7);
+}
 
 #section3 {
-    background: #FDF3F4; /* Background pink muda dari gambar */
+    background: #FDF3F4;
+    /* Background pink muda dari gambar */
     /* main-section sudah punya display: flex, align-items: center, justify-content: center */
 }
 
@@ -342,20 +366,24 @@
 
 .loveometer-header {
     /* ⬆️ BARU: Menggeser Judul dan Subtitle ke atas */
-    margin-top: -150px; /* Nilai negatif yang mendorongnya ke atas */
-    margin-bottom: 50px; /* Tambahkan jarak di bawah header */
+    margin-top: -150px;
+    /* Nilai negatif yang mendorongnya ke atas */
+    margin-bottom: 50px;
+    /* Tambahkan jarak di bawah header */
 }
 
 .loveometer-title {
     font-size: 52px !important;
     font-weight: 700;
-    color: #ED4276 !important; /* Merah muda cerah untuk judul */
+    color: #ED4276 !important;
+    /* Merah muda cerah untuk judul */
     margin-bottom: 5px;
 }
 
 .loveometer-subtitle {
     font-size: 20px !important;
-    color: #ED4276 !important; /* Warna subtitle */
+    color: #ED4276 !important;
+    /* Warna subtitle */
     margin-bottom: 40px;
     margin-top: -10px;
 }
@@ -364,7 +392,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px; /* Jarak antara input dan jantung */
+    gap: 200px;
+    /* Jarak antara input dan jantung */
     width: 100%;
 }
 
@@ -374,7 +403,8 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    flex: 1; /* Ambil bagian ruang */
+    flex: 1;
+    /* Ambil bagian ruang */
     max-width: 500px;
 }
 
@@ -383,10 +413,12 @@
     padding: 15px 25px;
     border: none;
     border-radius: 15px;
-    background-color: #FFD7E3; /* Pink muda untuk input */
+    background-color: #FFD7E3;
+    /* Pink muda untuk input */
     font-size: 18px;
     font-weight: 500;
-    color: #c90a57; /* Warna teks input */
+    color: #c90a57;
+    /* Warna teks input */
     text-align: center;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     outline: none;
@@ -407,7 +439,8 @@
     padding: 15px 25px;
     border: none;
     border-radius: 15px;
-    background: linear-gradient(90deg, #ED4276, #c90a57); /* Gradien dari gambar */
+    background: linear-gradient(90deg, #ED4276, #c90a57);
+    /* Gradien dari gambar */
     color: white;
     font-size: 20px;
     font-weight: 700;
@@ -424,7 +457,8 @@
 
 /* --- Kolom Kanan: Jantung --- */
 .loveometer-right {
-    flex: 1; /* Ambil bagian ruang */
+    flex: 1;
+    /* Ambil bagian ruang */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,7 +472,8 @@
     height: 150px;
     background: linear-gradient(135deg, #ED4276, #ED4276);
     transform: rotate(-45deg);
-    border-radius: 20px 0 20px 0; /* Memberi sedikit bentuk hati yang unik */
+    border-radius: 20px 0 20px 0;
+    /* Memberi sedikit bentuk hati yang unik */
     box-shadow: 0 8px 30px rgba(255, 38, 124, 0.4);
 }
 
@@ -466,7 +501,8 @@
     position: absolute;
     top: 40%;
     left: 62%;
-    transform: translate(-50%, -50%) rotate(45deg); /* Putar kembali teks 45 derajat */
+    transform: translate(-50%, -50%) rotate(45deg);
+    /* Putar kembali teks 45 derajat */
     font-size: 36px;
     font-weight: 700;
     color: white;
@@ -479,7 +515,8 @@
 /* ===================================== */
 @media (max-width: 768px) {
     .loveometer-content {
-        flex-direction: column; /* Tumpuk ke bawah di mobile */
+        flex-direction: column;
+        /* Tumpuk ke bawah di mobile */
         gap: 30px;
     }
 
@@ -487,17 +524,17 @@
         width: 120px;
         height: 120px;
     }
-    
+
     .loveometer-heart-box::before,
     .loveometer-heart-box::after {
         width: 120px;
         height: 120px;
     }
-    
+
     .loveometer-heart-box::before {
         top: -60px;
     }
-    
+
     .loveometer-heart-box::after {
         left: 60px;
     }
@@ -513,24 +550,22 @@
     .loveometer-subtitle {
         font-size: 18px !important;
     }
-    
+
     .loveometer-left {
         width: 90%;
         max-width: none;
     }
 
     .loveometer-right {
-        order: -1; /* Pindahkan Jantung ke atas di mobile */
+        order: -1;
+        /* Pindahkan Jantung ke atas di mobile */
         margin-bottom: 20px;
     }
 }
 
 #section4 {
     background: #FF92D6;
-}
-
-#section5 {
-    background: #A9BFF8;
+    min-height: 120vh;
 }
 
 .main-section h1 {
@@ -542,4 +577,415 @@
 .main-section p {
     font-size: 20px;
     color: #6B7ACB;
+}
+
+/* SECTION 4 - SONG PICKS */
+/* ===================================== */
+#section4 {
+    background-color: #FFF5F7;
+    /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songpicks-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    /* Wider container */
+    margin: 0 auto;
+}
+
+/* --- Left Side --- */
+.songpicks-left {
+    flex: 1;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align left */
+}
+
+.songpicks-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ED4276 !important;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    /* Center title relative to left column */
+}
+
+.songpicks-subtitle {
+    font-size: 24px;
+    color: #ED4276 !important;
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Music Player Card */
+.music-player-card {
+    background: #FFC2D6;
+    /* Pink card background */
+    border-radius: 30px;
+    padding: 25px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    /* Center card */
+    box-shadow: 0 10px 30px rgba(237, 66, 118, 0.2);
+}
+
+.player-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.album-art {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #FF92D6;
+    /* Fallback color */
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.track-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ED4276;
+    margin: 0 0 5px;
+}
+
+.track-info p {
+    font-size: 16px;
+    color: white;
+    margin: 0 0 15px;
+    font-weight: 500;
+}
+
+/* Controls */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    opacity: 1;
+}
+
+.play-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #ED4276;
+    font-weight: 600;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: white;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ED4276;
+    cursor: pointer;
+}
+
+/* Other Albums Grid */
+.other-albums {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.album-small {
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    background: #253A82;
+    /* Fallback color */
+}
+
+.album-small:hover {
+    transform: scale(1.05);
+}
+
+.album-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Right Side (Playlist) --- */
+.songpicks-right {
+    flex: 0.8;
+    /* Slightly smaller than left */
+    background: linear-gradient(180deg, #F6A7C4 0%, #D84E7E 100%);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #D93366 !important;
+    /* Darker pink for contrast on gradient */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.playlist-list {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.playlist-item {
+    background: #FFF0F5;
+    /* Very light pink/white */
+    height: 50px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .songpicks-container {
+        flex-direction: column;
+    }
+
+    .songpicks-left {
+        padding: 40px 20px;
+    }
+
+    .songpicks-right {
+        padding: 40px 20px;
+        min-height: 500px;
+    }
+
+    .music-player-card {
+        max-width: 100%;
+    }
+
+    .other-albums {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .album-art {
+        width: 140px;
+        height: 140px;
+    }
+
+    .player-controls {
+        justify-content: center;
+    }
+
+    .songpicks-title {
+        font-size: 42px;
+    }
+
+    .playlist-title {
+        font-size: 42px;
+    }
+}
+
+
+#section5 {
+    background: #FFCDDF;
+    min-height: 140vh;
+    display: flex;
+    align-items: flex start; /* Ubah dari center ke flex-start */
+    justify-content: flex start; /* Ubah dari center ke flex-start */
+    padding: 5px 20px 40px;
+}
+
+.yourlooks-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Tambah padding-top di container */
+}
+
+.yourlooks-header {
+    margin-bottom: 60px; /* Tambah margin bawah untuk jarak dengan gambar */
+    width: 100%; /* Pastikan header mengambil lebar penuh */
+    text-align: center; /* Pastikan text di dalam header rata tengah */
+    margin-top: -90px;
+}
+
+.yourlooks-title {
+   font-size: 42px !important;
+    font-weight: 700;
+    color: #ED4276 !important;
+    margin-bottom: 15px; /* Kurangi margin bottom */
+    line-height: 1.1;
+    text-align: center; /* Pastikan judul rata tengah */
+}
+
+.yourlooks-subtitle {
+    font-size: 24px;
+    color: #ED4276 !important;
+    font-weight: 500;
+    opacity: 0.9;
+    text-align: center; /* Pastikan subtitle rata tengah */
+    margin: 0 auto; /* Center horizontal */
+    max-width: 600px; /* Batas lebar untuk readability */
+}
+
+/* Container untuk 3 gambar */
+.yourlooks-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Jarak antara gambar */
+    flex-wrap: wrap; /* Untuk responsive */
+}
+
+/* Style untuk setiap item gambar */
+.style-image-item {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+/* Style untuk gambar */
+.style-img {
+    width: 300px; /* Ukuran tetap untuk desktop */
+    height: 420px; /* Tinggi proporsional */
+    object-fit: cover; /* Agar gambar tidak terdistorsi */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(237, 66, 118, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect untuk gambar */
+.style-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(237, 66, 118, 0.4);
+}
+
+/* Button More Looks */
+.yourlooks-button {
+    margin-top: 80px; /* Jarak dari gambar ke button */
+    text-align: center;
+    width: 100%;
+}
+
+.more-looks-btn {
+    background-color: #FDF3F4;
+    color: #ED4276;
+    border: none;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: 0.15s;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(237, 66, 118, 0.4);
+}
+
+.more-looks-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 25px rgba(255, 90, 120, 0.7);
+}
+
+
+/* ===================================== */
+/* UPDATE RESPONSIVE DESIGN */
+/* ===================================== */
+@media (max-width: 768px) {
+    .yourlooks-button {
+        margin-top: 40px;
+    }
+    
+    .more-looks-btn {
+        padding: 14px 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .yourlooks-button {
+        margin-top: 30px;
+    }
+    
+    .more-looks-btn {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
 }

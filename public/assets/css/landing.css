@@ -227,13 +227,19 @@ header.scrolled {
 /* KARTU FITUR STYLING */
 /* ===================================== */
 .features-title {
-    font-size: 30px;
-    font-weight: 900;
-    color: #E33571;
+    font-size: 22px;
+    font-weight: 600;
+    color: #6B7ACB !important;
     margin-top: 5px;
     margin-bottom: 5px;
     top: 20px; 
     position: relative;
+    display: block; /* Ganti ke block untuk full width */
+    background: linear-gradient(to right, #E5DFFF,#f2f0fb, #FFC0CB, #FDF3F4);
+    padding: 10px 0; /* Tinggi dikurangi */
+    border-radius: 0; /* Hilangkan border radius */
+    text-align: center;
+    width: 100%;
 }
 
 .features-grid {
@@ -241,14 +247,15 @@ header.scrolled {
     justify-content: center;
     gap: 50px;
     margin-top: -180px;
+    margin-right: 50px;
 }
 
 .feature-card {
-    width: 100%;
-    max-width: 200px;
+    width: 250px;
+    max-width: none;
     height: 250px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 0px;
     color: #FDF3F4;
     display: flex;
     flex-direction: column;
@@ -258,6 +265,7 @@ header.scrolled {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .feature-card:hover {
@@ -266,19 +274,19 @@ header.scrolled {
 
 /* Warna Background Kartu */
 .orange-bg {
-    background-color: #FDF288;
+    background-color: #F9E1A8;
 }
 
 .pink-bg {
-    background-color: #6B7ACB;
+    background-color: #BCD8EC;
 }
 
 .blue-bg {
-    background-color: #FF92D6;
+    background-color: #FFCBE1;
 }
 
 .purple-bg {
-    background-color: #A9BFF8;
+    background-color: #DCCCEC;
 }
 
 .card-icon {
@@ -307,6 +315,26 @@ header.scrolled {
     font-size: 14px;
     font-weight: 500;
     opacity: 0.9;
+}
+
+.orange-bg .card-title,
+.orange-bg .card-desc {
+    color: #ffc02d !important;
+}
+
+.pink-bg .card-title,
+.pink-bg .card-desc {
+    color: #49a4e6 !important;
+}
+
+.blue-bg .card-title,
+.blue-bg .card-desc {
+    color: #fe76af !important;
+}
+
+.purple-bg .card-title,
+.purple-bg .card-desc {
+    color: #b379ed !important;
 }
 
 /* ===================================== */

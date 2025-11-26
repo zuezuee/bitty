@@ -119,19 +119,120 @@
 
     <!-- Section 4 -->
     <section id="section4" class="main-section">
-        <div class="section-content">
-            <h1>Section 4</h1>
-            <p>Content for section 4</p>
+        <div class="songpicks-container">
+            <!-- Left Side -->
+            <div class="songpicks-left">
+                <h1 class="songpicks-title">Song Picks</h1>
+                <p class="songpicks-subtitle">Your ENTP-approved jam for today!</p>
+                
+                <!-- Music Player Card -->
+                <div class="music-player-card">
+                    <div class="player-content">
+                        <div class="album-art">
+                            <!-- Placeholder image, user to replace -->
+                            <img src="<?php echo base_url('public/assets/songcover_dualipa.jpg'); ?>" id="current-album-art" alt="Album Art" onerror="this.style.display='none';">
+                        </div>
+                        <div class="track-info">
+                            <h2 id="track-title">Levitating</h2>
+                            <p id="track-artist">Dua Lipa</p>
+                            
+                            <div class="player-controls">
+                                <button id="prev-btn" class="control-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                                </button>
+                                <button id="play-btn" class="control-btn play-btn">
+                                    <svg id="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg id="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                </button>
+                                <button id="next-btn" class="control-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                                </button>
+                            </div>
+                            
+                            <div class="progress-container">
+                                <span id="current-time">0:00</span>
+                                <input type="range" id="progress-bar" value="0" min="0" max="100">
+                                <span id="duration">3:25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Albums Grid -->
+                <div class="other-albums">
+                    <div class="album-small">
+                        <img src="<?php echo base_url('public/assets/albumcover_onedirection.jpg'); ?>" alt="Album 2" onerror="this.style.display='none';">
+                    </div>
+                    <div class="album-small">
+                        <img src="<?php echo base_url('public/assets/albumcover_neckdeep.jpg'); ?>" alt="Album 3" onerror="this.style.display='none';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="songpicks-right">
+                <h1 class="playlist-title">Playlist</h1>
+                <div class="playlist-list">
+                    <!-- 6 Empty Slots as per design -->
+                    <div class="playlist-item"></div>
+                    <div class="playlist-item"></div>
+                    <div class="playlist-item"></div>
+                    <div class="playlist-item"></div>
+                    <div class="playlist-item"></div>
+                    <div class="playlist-item"></div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Hidden Audio Element -->
+        <audio id="audio-player"></audio>
     </section>
 
-    <!-- Section 5 -->
-    <section id="section5" class="main-section">
-        <div class="section-content">
-            <h1>Section 5</h1>
-            <p>Content for section 5</p>
+    <script>
+    // Data songs yang dipassing dari PHP ke JavaScript
+    const songsData = [
+        {
+            title: "Levitating",
+            artist: "Dua Lipa",
+            cover: "<?php echo base_url('public/assets/songcover_dualipa.jpg'); ?>",
+            src: "<?php echo base_url('public/assets/Dualipa_Levitating.mp3'); ?>"
+        },
+        {
+            title: "Midnight Memories", 
+            artist: "One Direction",
+            cover: "<?php echo base_url('public/assets/albumcover_onedirection.jpg'); ?>",
+            src: "<?php echo base_url('public/assets/midnight-preview.mp3'); ?>"
+        }
+    ];
+    
+    // Base URL untuk JavaScript
+    const baseUrl = "<?php echo base_url(); ?>";
+</script>
+
+   <!-- Section 5 -->
+<section id="section5" class="main-section">
+    <div class="yourlooks-container">
+        <div class="yourlooks-header">
+            <h1 class="yourlooks-title">Your MBTI, Your Style</h1>
+            <p class="yourlooks-subtitle">Style recommendations made uniquely for you</p>
         </div>
-    </section>
+        
+        <div class="yourlooks-images">
+            <div class="style-image-item">
+                <img src="<?php echo base_url('public/assets/entplooks_1.png'); ?>" alt="Style 1" class="style-img">
+            </div>
+            <div class="style-image-item">
+                <img src="<?php echo base_url('public/assets/entplooks_2.png'); ?>" alt="Style 2" class="style-img">
+            </div>
+            <div class="style-image-item">
+                <img src="<?php echo base_url('public/assets/entplooks_3.png'); ?>" alt="Style 3" class="style-img">
+            </div>
+        </div>
+        <div class="yourlooks-button">
+            <button class="more-looks-btn">More Looks</button>
+        </div>
+    </div>
+</section>
 
     <!-- Load mainpage.js (tidak perlu landing.js) -->
     <script src="<?php echo base_url('public/assets/js/mainpage.js'); ?>"></script>

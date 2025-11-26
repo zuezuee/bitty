@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         
         .features-content-wrapper {
-        background-image: url('<?php echo base_url("public/assets/bgfitur.png"); ?>');
+        background-image: url('<?php echo base_url("public/assets/.png"); ?>');
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <img src="<?php echo base_url('public/assets/carousel/INFJ_card.png'); ?>" class="carousel-img">
             </div>
         </div>
-        <h2 class="features-title">Features</h2>
+        <h2 class="features-title">FEATURES</h2>
         <div class="features-content-wrapper">
             <?php $this->load->view($features); ?>
         </div>
