@@ -1,0 +1,670 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo Chettan 2', cursive;
+    background: #FDF3F4;
+    color: #333;
+}
+
+/* ===================================== */
+/* HEADER */
+/* ===================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #FDF3F4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header-logo {
+    height: 60px;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 60px;
+}
+
+.nav-right {
+    gap: 0px;
+}
+
+/* ===================================== */
+/* NAV CENTER LINKS */
+/* ===================================== */
+.nav-center a,
+.nav-right a {
+    text-decoration: none;
+    text-underline-offset: 4px;
+    color: #6B7ACB;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-center a.active {
+    color: #253A82;
+    text-decoration-color: #6B7ACB;
+}
+
+/* ===================================== */
+/* LOGIN & SIGNUP BUTTON (Final) */
+/* ===================================== */
+.nav-right a.login-btn {
+    padding: 3px 24px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 500;
+    background: #6B7ACB;
+    color: #FDF3F4;
+}
+
+/* LOGIN */
+
+.nav-right a.login-btn:hover {
+    background: #253A82;
+    border: 1px solid #253A82; /* Tambah border warna saat hover */
+}
+
+
+#signup-popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-popup .signup-box {
+    background: #FFFFFF;
+    width: 380px;
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.25s ease-out;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+#signup-popup .close-popup {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #555;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#signup-popup .close-popup:hover {
+    color: #000;
+}
+
+/* Animasi kecil agar lebih premium */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* INPUT STYLE */
+#signup-popup input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+#signup-popup button.signup-submit {
+    width: 100%;
+    padding: 12px;
+    background: #6B7ACB;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#signup-popup button.signup-submit:hover {
+    background: #253A82;
+}
+
+#home {
+    background: #FDF3F4;
+    background-size: 100% auto;
+    background-position: center calc(100% - 90px);
+    background-repeat: no-repeat;
+    padding-top: 80px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#features {
+    background-color: #FDF3F4;
+    height: auto;
+    min-height: 100vh;
+    padding: 0;
+    justify-content: flex-start;
+    margin-top: -50px;
+}
+
+.features-content-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 20px 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 180px;
+}
+
+/* ===================================== */
+/* KARTU FITUR STYLING */
+/* ===================================== */
+.features-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #E33571;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    top: 20px; 
+    position: relative;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: -180px;
+}
+
+.feature-card {
+    width: 100%;
+    max-width: 200px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    color: #FDF3F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-20px);
+}
+
+/* Warna Background Kartu */
+.orange-bg {
+    background-color: #FDF288;
+}
+
+.pink-bg {
+    background-color: #6B7ACB;
+}
+
+.blue-bg {
+    background-color: #FF92D6;
+}
+
+.purple-bg {
+    background-color: #A9BFF8;
+}
+
+.card-icon {
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+}
+
+.card-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.card-desc {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ===================================== */
+/* HOME CONTENT (Menggunakan Home.php) */
+/* ===================================== */
+/* ===================================== */
+/* HOME CONTENT STYLING */
+/* ===================================== */
+.home-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -100px;
+    /* Disesuaikan agar konten naik */
+}
+
+/* KELOMPOK JUDUL (LINE 1 & LINE 2) */
+.title-block {
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-size: 50px;
+    background: linear-gradient(90deg, #E33571, #FF9DBF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* KELOMPOK SUB-JUDUL (LINE 3) */
+.subtitle-block {
+    /* Menentukan jarak antara Line 3 dengan card di bawahnya */
+    margin-bottom: 50px;
+    font-weight: 500;
+    background: linear-gradient(50deg, #E33571, #FF9DBF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Style untuk semua baris teks */
+.title-block p,
+.subtitle-block p {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Style KHUSUS untuk Line 1 dan Line 2 (Dibuat sama tebal) */
+.title-block .line-1,
+.title-block .line-2 {
+    font-size: 50px;
+    color: #000;
+    font-weight: 900;
+    letter-spacing: 0px;
+}
+
+/* Style KHUSUS untuk Line 3 */
+.subtitle-block .line-3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+}
+
+.text-block p {
+    color: #333;
+    /* Warna teks sesuai gambar (hampir hitam) */
+    font-size: 24px;
+    /* Sesuaikan ukuran font */
+    font-weight: 700;
+}
+
+.text-block .line-1 {
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 5px;
+}
+
+/* ===================================== */
+/* SECTIONS */
+/* ===================================== */
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #B20248;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* ===================================== */
+/* CAROUSEL */
+/* ===================================== */
+.carousel-container {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 18s linear infinite;
+}
+
+/* Clone track tanpa perlu duplikasi di HTML */
+.carousel-track::after {
+    content: "";
+    display: flex;
+    gap: 20px;
+    animation: inherit;
+}
+
+/* Gambar */
+.carousel-img {
+    height: 180px;
+    width: auto;
+    border-radius: 10px;
+}
+
+/* Animasi bergerak */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+/* ===================================== */
+/* VIBES BANNER - FIXED POSITION */
+/* ===================================== */
+.vibes-banner {
+    width: 100%;
+    background: linear-gradient(to right, #E5DFFF,#f2f0fb, #FFC0CB, #FDF3F4);
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    overflow: hidden; /* Tambahkan ini */
+}
+
+.vibes-banner-text {
+    display: flex; /* Ubah ke flex */
+    animation: scroll-text 30s linear infinite; /* Tambahkan animasi */
+    font-size: 14px; /* Besarkan sedikit */
+    font-weight: 500;
+    color: #6B7ACB;
+    white-space: nowrap; /* Tambahkan ini */
+}
+
+.vibes-banner-text span {
+    padding: 0 10px;
+}
+
+/* Tambahkan keyframes untuk animasi */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===================================== */
+/* FOOTER */
+/* ===================================== */
+#footer {
+    background: linear-gradient(135deg, #6B7ACB, #253A82);
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-column a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+}
+
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover img {
+    opacity: 1;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ===================================== */
+/* LOGIN POPUP */
+/* ===================================== */
+#login-popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+#login-popup .login-box {
+    background: #FFFFFF;
+    width: 400px;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.25s ease-out;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+#login-popup .close-login-popup {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #555;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#login-popup .close-login-popup:hover {
+    color: #000;
+}
+
+#login-popup h2 {
+    text-align: center;
+    color: #253A82;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+#login-popup input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+#login-popup button.login-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #6B7ACB;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#login-popup button.login-submit-btn:hover {
+    background: #253A82;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.login-footer p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.login-footer a {
+    color: #6B7ACB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    color: #253A82;
+}
+
+.admin-login {
+    display: block;
+    color: #E33571 !important;
+    font-weight: 600;
+    margin-top: 10px;
+}
