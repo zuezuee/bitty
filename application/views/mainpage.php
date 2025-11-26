@@ -188,9 +188,10 @@
         <audio id="audio-player"></audio>
     </section>
 
+    <!-- Data songs yang dipassing dari PHP ke JavaScript -->
     <script>
-    // Data songs yang dipassing dari PHP ke JavaScript
-    const songsData = [
+    // Explicitly define as window property to ensure global scope
+    window.songsData = [
         {
             title: "Levitating",
             artist: "Dua Lipa",
@@ -206,8 +207,30 @@
     ];
     
     // Base URL untuk JavaScript
-    const baseUrl = "<?php echo base_url(); ?>";
-</script>
+    window.baseUrl = "<?php echo base_url(); ?>";
+    
+    console.log('songsData defined:', window.songsData);
+    
+    // Initialize music player setelah DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded fired, calling initMusicPlayer');
+            if (typeof initMusicPlayer === 'function') {
+                initMusicPlayer();
+            } else {
+                console.error('initMusicPlayer function not found!');
+            }
+        });
+    } else {
+        // DOM already loaded
+        console.log('DOM already loaded, calling initMusicPlayer immediately');
+        if (typeof initMusicPlayer === 'function') {
+            initMusicPlayer();
+        } else {
+            console.error('initMusicPlayer function not found!');
+        }
+    }
+    </script>
 
    <!-- Section 5 -->
 <section id="section5" class="main-section">
