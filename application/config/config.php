@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/bitty-main/';
+=======
+$config['base_url'] = 'http://localhost/bitty/';
+>>>>>>> c537249d568b4a0181adb12c3a235c89a2c91237
 
 /*
 |--------------------------------------------------------------------------
