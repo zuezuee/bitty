@@ -115,53 +115,145 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Bitty. All rights reserved.</p>
+            <p>&copy; 2025 Bitty. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Flash Messages -->
+    <?php if($this->session->flashdata('error')): ?>
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 1000;">
+            <?php echo $this->session->flashdata('error'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if($this->session->flashdata('success')): ?>
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 1000;">
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <?php endif; ?>
+
     <!-- Login Popup -->
-<div id="login-popup" class="popup-wrapper">
-    <div class="login-box">
-        <span class="close-login-popup">&times;</span>
-        <h2>Login</h2>
-        <form>
-            <input type="text" placeholder="Enter your MBTI" required>
-            <input type="email" placeholder="Enter your email" required>
-            <input type="password" placeholder="Enter your password" required>
-            
-            <button type="button" class="login-submit-btn" onclick="window.location.href='<?php echo site_url('mainpage'); ?>'">
-    Login</button>
-            
-            <div class="login-footer">
-                <p>Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
-                <a href="#" class="admin-login">Login as Admin</a>
-            </div>
-        </form>
+    <div id="login-popup" class="popup-wrapper">
+        <div class="login-box">
+            <span class="close-login-popup">&times;</span>
+            <h2>Login</h2>
+            <?php echo form_open('bittycontroller/login'); ?>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" value="<?php echo set_value('email'); ?>" required>
+                    <?php echo form_error('email', '<div class="error">', '</div>'); ?>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                    <?php echo form_error('password', '<div class="error">', '</div>'); ?>
+                </div>
+                
+                <button type="submit" class="login-submit-btn">Login</button>
+                
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
+
+                </div>
+            <?php echo form_close(); ?>
+        </div>
     </div>
-</div>
+
+    <!-- Signup Popup -->
+    <div id="signup-popup" class="popup-wrapper" style="display:none;">
+        <div class="login-box">
+            <span class="close-login-popup">&times;</span> 
+            <h2>Sign Up</h2>
+            <?php echo form_open('bittycontroller/register'); ?>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Enter your Name" value="<?php echo set_value('name'); ?>" required>
+                    <?php echo form_error('name', '<div class="error">', '</div>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="mbti" placeholder="Enter your MBTI" value="<?php echo set_value('mbti'); ?>" required>
+                    <?php echo form_error('mbti', '<div class="error">', '</div>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" value="<?php echo set_value('email'); ?>" required>
+                    <?php echo form_error('email', '<div class="error">', '</div>'); ?>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Create a password" required>
+                    <?php echo form_error('password', '<div class="error">', '</div>'); ?>
+                </div>
+                
+                <button type="submit" class="login-submit-btn">Sign Up</button>
+                
+                <div class="login-footer">
+                    <p>Already have an account? <a href="#" id="go-to-login">Login</a></p>
+                </div>
+            <?php echo form_close(); ?>
+        </div>
+    </div>
 <script>
 // Simple login popup functionality
 document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.querySelector('.login-btn');
     const loginPopup = document.getElementById('login-popup');
     const closeLoginBtn = document.querySelector('.close-login-popup');
+    
+    // Signup elements
+    const signupPopup = document.getElementById('signup-popup');
+    const closeSignupBtn = signupPopup ? signupPopup.querySelector('.close-login-popup') : null;
+    const goToSignupBtn = document.getElementById('go-to-signup');
+    const goToLoginBtn = document.getElementById('go-to-login');
 
-    if (loginBtn && loginPopup && closeLoginBtn) {
+    // Open Login
+    if (loginBtn && loginPopup) {
         loginBtn.addEventListener('click', function(e) {
             e.preventDefault();
             loginPopup.style.display = 'flex';
         });
+    }
 
+    // Close Login
+    if (closeLoginBtn) {
         closeLoginBtn.addEventListener('click', function() {
             loginPopup.style.display = 'none';
         });
+    }
 
-        loginPopup.addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
+    // Close Signup
+    if (closeSignupBtn) {
+        closeSignupBtn.addEventListener('click', function() {
+            signupPopup.style.display = 'none';
         });
     }
+
+    // Switch to Signup
+    if (goToSignupBtn) {
+        goToSignupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginPopup.style.display = 'none';
+            signupPopup.style.display = 'flex';
+        });
+    }
+
+    // Switch to Login
+    if (goToLoginBtn) {
+        goToLoginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupPopup.style.display = 'none';
+            loginPopup.style.display = 'flex';
+        });
+    }
+
+    // Close on outside click
+    window.addEventListener('click', function(e) {
+        if (e.target === loginPopup) {
+            loginPopup.style.display = 'none';
+        }
+        if (e.target === signupPopup) {
+            signupPopup.style.display = 'none';
+        }
+    });
 });
 </script>
 

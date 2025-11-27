@@ -35,7 +35,7 @@
                 <a href="#section5">YourLooks</a>
             </div>
             <div class="nav-right">
-                <a href="#" class="login-btn">Profile</a>
+                <a href="<?php echo site_url('bittycontroller/logout'); ?>" class="login-btn">Logout</a>
             </div>
         </div>
     </header>
@@ -188,16 +188,10 @@
         <audio id="audio-player"></audio>
     </section>
 
-<<<<<<< HEAD
-    <script>
-    // Data songs yang dipassing dari PHP ke JavaScript
-    const songsData = [
-=======
     <!-- Data songs yang dipassing dari PHP ke JavaScript -->
     <script>
     // Explicitly define as window property to ensure global scope
     window.songsData = [
->>>>>>> c537249d568b4a0181adb12c3a235c89a2c91237
         {
             title: "Levitating",
             artist: "Dua Lipa",
@@ -213,10 +207,6 @@
     ];
     
     // Base URL untuk JavaScript
-<<<<<<< HEAD
-    const baseUrl = "<?php echo base_url(); ?>";
-</script>
-=======
     window.baseUrl = "<?php echo base_url(); ?>";
     
     console.log('songsData defined:', window.songsData);
@@ -241,7 +231,6 @@
         }
     }
     </script>
->>>>>>> c537249d568b4a0181adb12c3a235c89a2c91237
 
    <!-- Section 5 -->
 <section id="section5" class="main-section">
