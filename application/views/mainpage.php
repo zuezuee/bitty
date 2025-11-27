@@ -35,7 +35,7 @@
                 <a href="#section5">YourLooks</a>
             </div>
             <div class="nav-right">
-                <a href="#" class="login-btn">Profile</a>
+                <a href="<?php echo site_url('bittycontroller/logout'); ?>" class="login-btn">Logout</a>
             </div>
         </div>
     </header>
